@@ -2,16 +2,34 @@
 
 $background-color: #14104B;
 $colorTextParagraph: #5D6687;
+$activeButtonColor: #FF4D71;
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+    color: $colorTextParagraph;
 }
 
 body {
     background-color: $background-color;
+}
+
+.wrapper {
+    max-width: 1620px;
+    margin: 0 auto;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+button {
+    cursor: pointer;
+    background-color: transparent;
+    color: $colorTextParagraph;
+    border: 2px solid $activeButtonColor;
+    color: $activeButtonColor;
 }
 
 nav {
@@ -20,8 +38,6 @@ nav {
         position: fixed;
         top: 10px;
         left: 5px;
-        background-color: transparent;
-        color: $colorTextParagraph;
         border: none;
 
         i {
@@ -37,12 +53,16 @@ nav {
         transform: translateX(-200px);
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: space-evenly;
         align-items: center;
         width: 150px;
         height: 150px;
         font-weight: bold;
         background-color: $background-color;
+        border-bottom-right-radius: 15px;
+        border-top-right-radius: 15px;
+        border: 3px solid $colorTextParagraph;
+        border-left: none;
         list-style: none;
         transition: linear .3s;
 
@@ -56,9 +76,245 @@ nav {
         a:visited {
             color: #5D6687;
         }
+
+        a:hover {
+            color: $activeButtonColor;
+        }
     }
 
     ul.mobile-active {
         transform: translateX(0)
+    }
+}
+
+#home {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "name"
+        "photo"
+        "contact";
+    justify-items: center;
+    margin: 60px 20px 0;
+
+    .home__text {
+        grid-area: name;
+
+        h1 {
+            color: #EFF7FE;
+            letter-spacing: 1px;
+        }
+
+        h2 {
+            font-weight: normal;
+            font-size: 22px;
+            letter-spacing: 1px;
+        }
+    }
+
+    .home__image {
+        grid-area: photo;
+        margin: 25px auto;
+        height: 250px;
+
+        img {
+            height: 100%;
+            border-top-right-radius: 20px;
+            border-bottom-left-radius: 20px;
+            box-shadow: -10px -10px 10px $colorTextParagraph;
+        }
+    }
+
+    button {
+        grid-area: contact;
+        height: 36px;
+        width: 120px;
+        border-radius: 10px;
+        font-size: 16px;
+        font-weight: bold;
+        margin: 0 auto;
+        position: relative;
+        overflow: hidden;
+    }
+
+    button::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        right: 0;
+        z-index: -1;
+        transform: translate(100%, -50%);
+        width: 100%;
+        height: 16px;
+        background: linear-gradient(90deg, rgba(62, 19, 143, 1) 0%, rgba(31, 187, 216, 1) 50%);
+        transition: transform .2s linear 0s, height .1s ease .2s;
+    }
+
+    button:hover::after {
+        transform: translate(0, -50%);
+        height: 100%;
+    }
+}
+
+@media(min-width: 533px) {
+
+    nav {
+        .hamburger {
+            left: 10px;
+        }
+    }
+
+    #home {
+        grid-template-areas: "name photo"
+            "name photo"
+            "contact photo"
+            "contact photo";
+        margin: 60px 20px 0;
+
+        .home__text {
+            grid-area: name;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+    }
+}
+
+@media (min-width: 800px) {
+    #home {
+
+        .home__text {
+
+            h1 {
+                font-size: 32px;
+            }
+
+            h2 {
+                font-size: 26px;
+            }
+        }
+
+        .home__image {
+            height: 31.25vw;
+            max-height: 437.5px;
+        }
+
+        p,
+        button {
+            font-size: 18px;
+            letter-spacing: 1px;
+        }
+    }
+}
+
+@media (min-width: 960px) {
+    #home {
+
+        .home__text {
+
+            h1 {
+                font-size: 5vw;
+            }
+
+            h2 {
+                font-size: 4vw;
+            }
+        }
+
+        p,
+        button {
+            font-size: 3vw;
+        }
+
+        button {
+            height: 6vw;
+            width: 18.5vw;
+            max-height: 84px;
+            max-width: 259px;
+        }
+    }
+}
+
+@media (min-width: 1024px) {
+    nav {
+
+        .hamburger {
+            display: none;
+        }
+
+
+        ul {
+            position: fixed;
+            top: 0;
+            left: 0;
+            transform: translateX(0);
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 40px 6% 40px 0;
+            width: 100%;
+            height: 70px;
+            border-bottom-right-radius: none;
+            border-top-right-radius: none;
+            border: none;
+
+            li {
+                margin-right: 100px;
+
+                a {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 28px;
+                    text-align: center;
+                    width: 150px;
+                    height: 50px;
+                    cursor: pointer;
+                    border-radius: 10px;
+                    transition: .3s linear;
+                    border: 2px solid transparent;
+                }
+
+                a:hover {
+                    border-color: $activeButtonColor;
+                }
+            }
+
+        }
+    }
+
+    #home {
+        margin: 90px 20px 0;
+
+        .home__image {
+
+            img {
+                box-shadow: -15px -15px 15px $colorTextParagraph;
+            }
+        }
+    }
+}
+
+@media(min-width: 1400px) {
+    #home {
+
+        .home__text {
+
+            h1 {
+                font-size: 70px;
+            }
+
+            h2 {
+                font-size: 56px;
+            }
+        }
+
+        p,
+        button {
+            font-size: 40px;
+        }
     }
 }
