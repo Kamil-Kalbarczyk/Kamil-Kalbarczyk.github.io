@@ -8,7 +8,8 @@
 }
 
 body {
-  background-color: #14104B;
+  background: radial-gradient(circle, #14104b 61%, black 100%);
+  min-height: 200vh;
 }
 
 .wrapper {
@@ -32,6 +33,7 @@ nav .hamburger {
   top: 10px;
   left: 5px;
   border: none;
+  z-index: 2;
 }
 
 nav .hamburger i {
@@ -40,7 +42,7 @@ nav .hamburger i {
 
 nav ul {
   position: fixed;
-  top: 57px;
+  top: 0;
   left: 0;
   -webkit-transform: translateX(-200px);
           transform: translateX(-200px);
@@ -51,23 +53,27 @@ nav ul {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding-top: 60px;
   width: 150px;
-  height: 150px;
+  height: 100vh;
   font-weight: bold;
-  background-color: #14104B;
-  border-bottom-right-radius: 15px;
-  border-top-right-radius: 15px;
-  border: 3px solid #5D6687;
+  background-color: black;
+  overflow: hidden;
   border-left: none;
   list-style: none;
   -webkit-transition: linear .3s;
   transition: linear .3s;
+  z-index: 1;
+}
+
+nav ul li {
+  margin: 10px 0;
 }
 
 nav ul a {
@@ -75,6 +81,7 @@ nav ul a {
   text-decoration: none;
   letter-spacing: .7px;
   color: #5D6687;
+  text-shadow: 2px 2px 4px black;
 }
 
 nav ul a:visited {
@@ -86,6 +93,28 @@ nav ul a:hover {
 }
 
 nav ul.mobile-active {
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+nav ul::after {
+  display: block;
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  background: linear-gradient(190deg, black 0%, rgba(0, 0, 0, 0) 100%);
+  z-index: -1;
+  -webkit-transform: translateX(110%);
+          transform: translateX(110%);
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+nav .changeMenuBackground {
   -webkit-transform: translateX(0);
           transform: translateX(0);
 }
@@ -108,15 +137,21 @@ nav ul.mobile-active {
   grid-area: name;
 }
 
+#home .home__text p {
+  text-align: center;
+}
+
 #home .home__text h1 {
   color: #EFF7FE;
   letter-spacing: 1px;
+  text-align: center;
 }
 
 #home .home__text h2 {
   font-weight: normal;
   font-size: 22px;
   letter-spacing: 1px;
+  text-align: center;
 }
 
 #home .home__image {
@@ -158,13 +193,12 @@ nav ul.mobile-active {
   -webkit-transform: translate(100%, -50%);
           transform: translate(100%, -50%);
   width: 100%;
-  height: 16px;
-  background: -webkit-gradient(linear, left top, right top, from(#3e138f), color-stop(50%, #1fbbd8));
-  background: linear-gradient(90deg, #3e138f 0%, #1fbbd8 50%);
-  -webkit-transition: height .1s ease .2s, -webkit-transform .2s linear 0s;
-  transition: height .1s ease .2s, -webkit-transform .2s linear 0s;
-  transition: transform .2s linear 0s, height .1s ease .2s;
-  transition: transform .2s linear 0s, height .1s ease .2s, -webkit-transform .2s linear 0s;
+  height: 6px;
+  background: radial-gradient(circle, black 61%, #14104b 100%);
+  -webkit-transition: height .2s ease .2s, -webkit-transform .2s linear 0s;
+  transition: height .2s ease .2s, -webkit-transform .2s linear 0s;
+  transition: transform .2s linear 0s, height .2s ease .2s;
+  transition: transform .2s linear 0s, height .2s ease .2s, -webkit-transform .2s linear 0s;
 }
 
 #home button:hover::after {
@@ -265,6 +299,9 @@ nav ul.mobile-active {
     border-bottom-right-radius: none;
     border-top-right-radius: none;
     border: none;
+    background: transparent;
+    -webkit-transition: .3s;
+    transition: .3s;
   }
   nav ul li {
     margin-right: 100px;

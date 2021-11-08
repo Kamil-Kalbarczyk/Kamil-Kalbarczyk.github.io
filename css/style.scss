@@ -1,6 +1,6 @@
 // font-family: 'Poppins', sans-serif;
 
-$background-color: #14104B;
+$background-color: radial-gradient(circle, rgba(20, 16, 75, 1) 61%, rgba(0, 0, 0, 1) 100%);
 $colorTextParagraph: #5D6687;
 $activeButtonColor: #FF4D71;
 
@@ -13,7 +13,8 @@ $activeButtonColor: #FF4D71;
 }
 
 body {
-    background-color: $background-color;
+    background: $background-color;
+    min-height: 200vh;
 }
 
 .wrapper {
@@ -39,6 +40,7 @@ nav {
         top: 10px;
         left: 5px;
         border: none;
+        z-index: 2;
 
         i {
             font-size: 34px;
@@ -48,29 +50,34 @@ nav {
 
     ul {
         position: fixed;
-        top: 57px;
+        top: 0;
         left: 0;
         transform: translateX(-200px);
         display: flex;
         flex-direction: column;
-        justify-content: space-evenly;
+        justify-content: flex-start;
         align-items: center;
+        padding-top: 60px;
         width: 150px;
-        height: 150px;
+        height: 100vh;
         font-weight: bold;
-        background-color: $background-color;
-        border-bottom-right-radius: 15px;
-        border-top-right-radius: 15px;
-        border: 3px solid $colorTextParagraph;
+        background-color: black;
+        overflow: hidden;
         border-left: none;
         list-style: none;
         transition: linear .3s;
+        z-index: 1;
+
+        li {
+            margin: 10px 0;
+        }
 
         a {
             font-size: 20px;
             text-decoration: none;
             letter-spacing: .7px;
             color: $colorTextParagraph;
+            text-shadow: 2px 2px 4px black;
         }
 
         a:visited {
@@ -84,6 +91,25 @@ nav {
 
     ul.mobile-active {
         transform: translateX(0)
+    }
+
+    ul::after {
+        display: block;
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background: rgb(0, 0, 0);
+        background: linear-gradient(190deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+        z-index: -1;
+        transform: translateX(110%);
+        transition: .3s;
+    }
+
+    .changeMenuBackground {
+        transform: translateX(0);
     }
 }
 
@@ -101,15 +127,21 @@ nav {
     .home__text {
         grid-area: name;
 
+        p {
+            text-align: center;
+        }
+
         h1 {
             color: #EFF7FE;
             letter-spacing: 1px;
+            text-align: center;
         }
 
         h2 {
             font-weight: normal;
             font-size: 22px;
             letter-spacing: 1px;
+            text-align: center;
         }
     }
 
@@ -146,9 +178,9 @@ nav {
         z-index: -1;
         transform: translate(100%, -50%);
         width: 100%;
-        height: 16px;
-        background: linear-gradient(90deg, rgba(62, 19, 143, 1) 0%, rgba(31, 187, 216, 1) 50%);
-        transition: transform .2s linear 0s, height .1s ease .2s;
+        height: 6px;
+        background: radial-gradient(circle, rgba(0, 0, 0, 1) 61%, rgba(20, 16, 75, 1) 100%);
+        transition: transform .2s linear 0s, height .2s ease .2s;
     }
 
     button:hover::after {
@@ -244,7 +276,6 @@ nav {
             display: none;
         }
 
-
         ul {
             position: fixed;
             top: 0;
@@ -260,6 +291,13 @@ nav {
             border-bottom-right-radius: none;
             border-top-right-radius: none;
             border: none;
+            background: transparent;
+            transition: .3s;
+            // background-color: rgba(0, 0, 0, .8);
+            // background: rgb(0, 0, 0);
+            // background: linear-gradient(190deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
+            // background-color: rgba(0, 0, 0, 1);
+
 
             li {
                 margin-right: 100px;
