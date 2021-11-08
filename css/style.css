@@ -350,4 +350,45 @@ nav .changeMenuBackground {
     font-size: 40px;
   }
 }
+
+.cursor {
+  -webkit-animation: cursorFlashing 2s infinite linear;
+          animation: cursorFlashing 2s infinite linear;
+}
+
+@-webkit-keyframes cursorFlashing {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes cursorFlashing {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 /*# sourceMappingURL=style.css.map */

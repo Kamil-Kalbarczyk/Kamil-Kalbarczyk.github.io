@@ -1,11 +1,6 @@
 const mobileMenuButton = document.querySelector('.hamburger i');
 const menu = document.querySelector('nav>ul');
-const jobTitle = document.querySelector('#home h2');
-// const menuBackground = document.querySelector('nav>ul::after');
-
-// mobileMenuButton.addEventListener('click', () => {
-//     menu.classList.toggle('mobile-active');
-// });
+const jobTitleRender = document.querySelector('#home h2');
 
 document.addEventListener('click', (e) => {
     if (e.target === mobileMenuButton) {
@@ -45,5 +40,43 @@ document.addEventListener('scroll', () => {
 })
 
 // job title changing
+jobTitleRender.textContent = "";
+const singleJobTitle = document.createElement('span');
+const textCursor = document.createElement('span');
+textCursor.textContent = "|";
+textCursor.classList.add('cursor');
+jobTitleRender.prepend(singleJobTitle);
+jobTitleRender.append(textCursor);
 
 const jobTitles = ['Front-end Developer', 'Web Developer', 'Freelancer'];
+
+const timeOfSingleLetter = 80;
+const timeOFSingleWord = timeOfSingleLetter * 50;
+let indexOfLetters = -15;
+let indexOfWords = 0;
+
+const writing = () => {
+    if (indexOfLetters >= 0) {
+        singleJobTitle.textContent += jobTitles[indexOfWords][indexOfLetters];
+    };
+    indexOfLetters++;
+    if ((singleJobTitle.textContent.length === jobTitles.slice(-1)[0].length) && (indexOfWords === jobTitles.length - 1)) {
+        indexOfLetters = -15;
+        indexOfWords = 0;
+        return setTimeout(() => {
+            singleJobTitle.textContent = "";
+            writing();
+        }, timeOFSingleWord)
+    };
+    if (singleJobTitle.textContent.length === jobTitles[indexOfWords].length) {
+        indexOfLetters = -15;
+        indexOfWords++;
+        setTimeout(() => {
+            singleJobTitle.textContent = "";
+        }, timeOFSingleWord);
+        return setTimeout(writing, timeOFSingleWord);
+    };
+    setTimeout(writing, timeOfSingleLetter);
+};
+
+writing();
