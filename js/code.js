@@ -14,7 +14,7 @@ document.addEventListener('click', (e) => {
 
 // menu background change
 
-const menuBackground = document.createElement('div');
+const menuBackground = document.createElement('ul');
 menuBackground.style.cssText = `
 position: absolute;
 top: 0;

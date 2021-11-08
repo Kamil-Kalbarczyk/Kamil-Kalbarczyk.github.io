@@ -93,24 +93,6 @@ nav {
         transform: translateX(0)
     }
 
-    ul::after {
-        display: block;
-        content: "";
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: 100%;
-        height: 100%;
-        background: rgb(0, 0, 0);
-        background: linear-gradient(190deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
-        z-index: -1;
-        transform: translateX(110%);
-        transition: .3s;
-    }
-
-    .changeMenuBackground {
-        transform: translateX(0);
-    }
 }
 
 #home {
@@ -128,6 +110,7 @@ nav {
         grid-area: name;
 
         p {
+            font-size: 18px;
             text-align: center;
         }
 
@@ -226,6 +209,10 @@ nav {
             h2 {
                 font-size: 26px;
             }
+
+            p {
+                letter-spacing: 1px;
+            }
         }
 
         .home__image {
@@ -233,7 +220,6 @@ nav {
             max-height: 437.5px;
         }
 
-        p,
         button {
             font-size: 18px;
             letter-spacing: 1px;
@@ -253,14 +239,14 @@ nav {
             h2 {
                 font-size: 4vw;
             }
+
+            p {
+                font-size: 3vw;
+            }
         }
 
-        p,
         button {
             font-size: 3vw;
-        }
-
-        button {
             height: 6vw;
             width: 18.5vw;
             max-height: 84px;
@@ -293,11 +279,6 @@ nav {
             border: none;
             background: transparent;
             transition: .3s;
-            // background-color: rgba(0, 0, 0, .8);
-            // background: rgb(0, 0, 0);
-            // background: linear-gradient(190deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0) 100%);
-            // background-color: rgba(0, 0, 0, 1);
-
 
             li {
                 margin-right: 100px;
@@ -347,6 +328,10 @@ nav {
 
             h2 {
                 font-size: 56px;
+            }
+
+            p {
+                font-size: 40px;
             }
         }
 
