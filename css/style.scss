@@ -12,6 +12,10 @@ $activeButtonColor: darkorange;
     color: $colorTextParagraph;
 }
 
+:root {
+    scroll-behavior: smooth;
+}
+
 body {
     background: $background-color;
     min-height: 200vh;
@@ -145,7 +149,7 @@ nav {
             height: 100%;
             border-top-right-radius: 20px;
             border-bottom-left-radius: 20px;
-            box-shadow: -10px -10px 10px $colorTextParagraph;
+            box-shadow: 2px 2px 4px black;
         }
     }
 
@@ -331,7 +335,7 @@ nav {
         .home__image {
 
             img {
-                box-shadow: -15px -15px 15px $colorTextParagraph;
+                box-shadow: 2px 2px 4px black;
             }
         }
     }

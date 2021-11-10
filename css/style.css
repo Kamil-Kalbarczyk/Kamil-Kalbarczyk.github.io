@@ -7,6 +7,10 @@
   color: #5D6687;
 }
 
+:root {
+  scroll-behavior: smooth;
+}
+
 body {
   background: radial-gradient(circle, #14104b 61%, black 100%);
   min-height: 200vh;
@@ -154,8 +158,8 @@ nav ul.mobile-active {
   height: 100%;
   border-top-right-radius: 20px;
   border-bottom-left-radius: 20px;
-  -webkit-box-shadow: -10px -10px 10px #5D6687;
-          box-shadow: -10px -10px 10px #5D6687;
+  -webkit-box-shadow: 2px 2px 4px black;
+          box-shadow: 2px 2px 4px black;
 }
 
 #home button {
@@ -329,8 +333,8 @@ nav ul.mobile-active {
     margin: 90px 20px 0;
   }
   #home .home__image img {
-    -webkit-box-shadow: -15px -15px 15px #5D6687;
-            box-shadow: -15px -15px 15px #5D6687;
+    -webkit-box-shadow: 2px 2px 4px black;
+            box-shadow: 2px 2px 4px black;
   }
 }
 
