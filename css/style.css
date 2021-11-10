@@ -24,8 +24,8 @@ button {
   cursor: pointer;
   background-color: transparent;
   color: #5D6687;
-  border: 2px solid #FF4D71;
-  color: #FF4D71;
+  border: 2px solid darkorange;
+  color: darkorange;
 }
 
 nav .hamburger {
@@ -34,10 +34,16 @@ nav .hamburger {
   left: 5px;
   border: none;
   z-index: 2;
+  -webkit-transition: .3s;
+  transition: .3s;
 }
 
 nav .hamburger i {
   font-size: 34px;
+}
+
+nav .hamburger .mobile-active {
+  color: darkorange;
 }
 
 nav ul {
@@ -89,7 +95,7 @@ nav ul a:visited {
 }
 
 nav ul a:hover {
-  color: #FF4D71;
+  color: darkorange;
 }
 
 nav ul.mobile-active {
@@ -118,19 +124,22 @@ nav ul.mobile-active {
 #home .home__text p {
   font-size: 18px;
   text-align: center;
+  text-shadow: 2px 2px 4px black;
 }
 
 #home .home__text h1 {
   color: #EFF7FE;
   letter-spacing: 1px;
   text-align: center;
+  text-shadow: 2px 2px 4px black;
 }
 
 #home .home__text h2 {
   font-weight: normal;
-  font-size: 22px;
+  font-size: 24px;
   letter-spacing: 1px;
   text-align: center;
+  text-shadow: 2px 2px 4px black;
 }
 
 #home .home__image {
@@ -174,16 +183,22 @@ nav ul.mobile-active {
   width: 100%;
   height: 6px;
   background: radial-gradient(circle, black 61%, #14104b 100%);
-  -webkit-transition: height .2s ease .2s, -webkit-transform .2s linear 0s;
-  transition: height .2s ease .2s, -webkit-transform .2s linear 0s;
-  transition: transform .2s linear 0s, height .2s ease .2s;
-  transition: transform .2s linear 0s, height .2s ease .2s, -webkit-transform .2s linear 0s;
+  -webkit-transition: height .2s ease .5s, -webkit-transform .2s linear 0s;
+  transition: height .2s ease .5s, -webkit-transform .2s linear 0s;
+  transition: transform .2s linear 0s, height .2s ease .5s;
+  transition: transform .2s linear 0s, height .2s ease .5s, -webkit-transform .2s linear 0s;
 }
 
 #home button:hover::after {
   -webkit-transform: translate(0, -50%);
           transform: translate(0, -50%);
   height: 100%;
+}
+
+@media (min-width: 360px) {
+  #home .home__text h2 {
+    font-size: 28px;
+  }
 }
 
 @media (min-width: 533px) {
@@ -308,7 +323,7 @@ nav ul.mobile-active {
     border: 2px solid transparent;
   }
   nav ul li a:hover {
-    border-color: #FF4D71;
+    border-color: darkorange;
   }
   #home {
     margin: 90px 20px 0;

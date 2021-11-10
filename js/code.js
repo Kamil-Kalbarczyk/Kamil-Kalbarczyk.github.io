@@ -5,10 +5,12 @@ const jobTitleRender = document.querySelector('#home h2');
 document.addEventListener('click', (e) => {
     if (e.target === mobileMenuButton) {
         menu.classList.toggle('mobile-active');
+        mobileMenuButton.classList.toggle('mobile-active');
     } else if (e.target === menu) {
         return
     } else {
         menu.classList.remove('mobile-active');
+        mobileMenuButton.classList.remove('mobile-active');
     }
 })
 
