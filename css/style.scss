@@ -2,7 +2,8 @@
 
 $background-color: radial-gradient(circle, rgba(20, 16, 75, 1) 61%, rgba(0, 0, 0, 1) 100%);
 $colorTextParagraph: #5D6687;
-$activeButtonColor: darkorange;
+$activeButtonColor: #EFF7FE;
+$textColor: #EFF7FE;
 
 * {
     margin: 0;
@@ -61,7 +62,7 @@ nav {
         position: fixed;
         top: 0;
         left: 0;
-        transform: translateX(-200px);
+        transform: translateX(-100%);
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
@@ -143,13 +144,13 @@ nav {
     .home__image {
         grid-area: photo;
         margin: 25px auto;
-        height: 250px;
+        height: 200px;
 
         img {
             height: 100%;
             border-top-right-radius: 20px;
             border-bottom-left-radius: 20px;
-            box-shadow: 2px 2px 4px black;
+            box-shadow: 0 0 4px black;
         }
     }
 
@@ -175,7 +176,7 @@ nav {
         width: 100%;
         height: 6px;
         background: radial-gradient(circle, rgba(0, 0, 0, 1) 61%, rgba(20, 16, 75, 1) 100%);
-        transition: transform .2s linear 0s, height .2s ease .5s;
+        transition: transform .2s linear 0s, height .2s ease .3s;
     }
 
     button:hover::after {
@@ -188,6 +189,7 @@ nav {
     #home {
 
         .home__text {
+            min-width: 330px;
 
             h2 {
                 font-size: 28px;
@@ -295,7 +297,7 @@ nav {
             flex-direction: row;
             justify-content: flex-end;
             align-items: center;
-            padding: 40px 6% 40px 0;
+            padding: 40px 0 40px 0;
             width: 100%;
             height: 70px;
             border-bottom-right-radius: none;
@@ -305,7 +307,7 @@ nav {
             transition: .3s;
 
             li {
-                margin-right: 100px;
+                margin: 0 35px;
 
                 a {
                     display: flex;
@@ -335,7 +337,7 @@ nav {
         .home__image {
 
             img {
-                box-shadow: 2px 2px 4px black;
+                box-shadow: 0 0 8px black;
             }
         }
     }
