@@ -32,6 +32,10 @@ button {
   color: #EFF7FE;
 }
 
+nav {
+  z-index: 99;
+}
+
 nav .hamburger {
   position: fixed;
   top: 10px;
@@ -40,10 +44,12 @@ nav .hamburger {
   z-index: 2;
   -webkit-transition: .3s;
   transition: .3s;
+  z-index: 999;
 }
 
 nav .hamburger i {
   font-size: 34px;
+  z-index: 999;
 }
 
 nav .hamburger .mobile-active {
@@ -79,7 +85,7 @@ nav ul {
   list-style: none;
   -webkit-transition: linear .3s;
   transition: linear .3s;
-  z-index: 1;
+  z-index: 99;
 }
 
 nav ul li {
@@ -199,12 +205,126 @@ nav ul.mobile-active {
   height: 100%;
 }
 
+#aboutMe {
+  margin: 40px 5px 0 40px;
+}
+
+#aboutMe .aboutMe__section {
+  margin: 0 35px 30px 0;
+}
+
+#aboutMe .aboutMe__section h3 {
+  color: #EFF7FE;
+  text-shadow: 2px 2px 4px black;
+  letter-spacing: 1px;
+  font-weight: normal;
+  margin-bottom: 5px;
+}
+
+#aboutMe .aboutMe__section p {
+  text-align: justify;
+}
+
+#aboutMe .aboutMe__section .aboutMe__technogolies {
+  position: relative;
+  height: 400px;
+}
+
+#aboutMe .aboutMe__section .aboutMe__technogolies .aboutMe__technogolieContainer {
+  position: absolute;
+  height: 100px;
+}
+
+#aboutMe .aboutMe__section .aboutMe__technogolies .aboutMe__technogolieContainer img {
+  height: 100%;
+}
+
+#aboutMe .aboutMe__section .aboutMe__technogolies .html {
+  top: 0;
+  left: -20px;
+}
+
+#aboutMe .aboutMe__section .aboutMe__technogolies .sass {
+  top: 0;
+  left: 70px;
+  z-index: 1;
+}
+
+#aboutMe .aboutMe__section .aboutMe__technogolies .css {
+  top: 0;
+  right: -20px;
+}
+
+#aboutMe .aboutMe__section .aboutMe__technogolies .js {
+  top: 120px;
+  left: -20px;
+}
+
+#aboutMe .aboutMe__section .aboutMe__technogolies .react {
+  top: 105px;
+  left: 50%;
+  height: 130px;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  z-index: 2;
+}
+
+#aboutMe .aboutMe__section .aboutMe__technogolies .ts {
+  top: 120px;
+  right: -20px;
+}
+
+#aboutMe .aboutMe__section .aboutMe__technogolies .firebase {
+  top: 240px;
+  left: 0;
+}
+
+#aboutMe .aboutMe__section .aboutMe__technogolies .sql {
+  top: 240px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+#aboutMe .aboutMe__section .aboutMe__technogolies .git {
+  top: 240px;
+  right: -20px;
+}
+
+@media (max-width: 320px) {
+  #aboutMe .aboutMe__section .aboutMe__technogolies .aboutMe__technogolieContainer {
+    height: 80px;
+  }
+  #aboutMe .aboutMe__section .aboutMe__technogolies .sass {
+    top: 0;
+    left: 55px;
+    z-index: 1;
+  }
+  #aboutMe .aboutMe__section .aboutMe__technogolies .react {
+    top: 110px;
+    height: 100px;
+  }
+}
+
 @media (min-width: 360px) {
   #home .home__text {
     min-width: 330px;
   }
   #home .home__text h2 {
     font-size: 28px;
+  }
+  #aboutMe .aboutMe__section .aboutMe__technogolies .aboutMe__technogolieContainer {
+    height: 80px;
+  }
+  #aboutMe .aboutMe__section .aboutMe__technogolies .sass {
+    top: 0;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+  #aboutMe .aboutMe__section .aboutMe__technogolies .react {
+    top: 110px;
+    height: 100px;
   }
 }
 
@@ -231,6 +351,40 @@ nav ul.mobile-active {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+  }
+  #aboutMe .aboutMe__section .aboutMe__technogolies .aboutMe__technogolieContainer {
+    height: 100px;
+  }
+  #aboutMe .aboutMe__section .aboutMe__technogolies .html {
+    left: 0;
+  }
+  #aboutMe .aboutMe__section .aboutMe__technogolies .sass {
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+  #aboutMe .aboutMe__section .aboutMe__technogolies .css {
+    top: 0;
+    right: 0;
+  }
+  #aboutMe .aboutMe__section .aboutMe__technogolies .js {
+    top: 120px;
+    left: 0;
+  }
+  #aboutMe .aboutMe__section .aboutMe__technogolies .react {
+    height: 130px;
+    top: 105px;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+  #aboutMe .aboutMe__section .aboutMe__technogolies .ts {
+    top: 120px;
+    right: 0;
+  }
+  #aboutMe .aboutMe__section .aboutMe__technogolies .git {
+    top: 240px;
+    right: 0;
   }
 }
 

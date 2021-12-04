@@ -39,6 +39,7 @@ button {
 }
 
 nav {
+    z-index: 99;
 
     .hamburger {
         position: fixed;
@@ -47,9 +48,11 @@ nav {
         border: none;
         z-index: 2;
         transition: .3s;
+        z-index: 999;
 
         i {
             font-size: 34px;
+            z-index: 999;
         }
 
         .mobile-active {
@@ -76,7 +79,7 @@ nav {
         border-left: none;
         list-style: none;
         transition: linear .3s;
-        z-index: 1;
+        z-index: 99;
 
         li {
             margin: 10px 0;
@@ -185,6 +188,120 @@ nav {
     }
 }
 
+#aboutMe {
+    margin: 40px 5px 0 40px;
+
+    .aboutMe__section {
+        margin: 0 35px 30px 0;
+
+        h3 {
+            color: $textColor;
+            text-shadow: 2px 2px 4px black;
+            letter-spacing: 1px;
+            font-weight: normal;
+            margin-bottom: 5px;
+        }
+
+        p {
+            text-align: justify;
+        }
+
+        .aboutMe__technogolies {
+            position: relative;
+            height: 400px;
+
+            .aboutMe__technogolieContainer {
+                position: absolute;
+                height: 100px;
+
+                img {
+                    height: 100%;
+                }
+            }
+
+            .html {
+                top: 0;
+                left: -20px;
+            }
+
+            .sass {
+                top: 0;
+                left: 70px;
+                z-index: 1;
+            }
+
+            .css {
+                top: 0;
+                right: -20px;
+
+            }
+
+            .js {
+                top: 120px;
+                left: -20px;
+            }
+
+            .react {
+                top: 105px;
+                left: 50%;
+                height: 130px;
+                transform: translateX(-50%);
+                z-index: 2;
+            }
+
+            .ts {
+                top: 120px;
+                right: -20px;
+            }
+
+            .firebase {
+                top: 240px;
+                left: 0;
+            }
+
+            .sql {
+                top: 240px;
+                left: 50%;
+                transform: translateX(-50%);
+
+            }
+
+            .git {
+                top: 240px;
+                right: -20px;
+            }
+
+        }
+    }
+}
+
+@media (max-width: 320px) {
+    #aboutMe {
+
+        .aboutMe__section {
+
+            .aboutMe__technogolies {
+
+                .aboutMe__technogolieContainer {
+                    height: 80px;
+                }
+
+                .sass {
+                    top: 0;
+                    left: 55px;
+                    z-index: 1;
+                }
+
+                .react {
+                    top: 110px;
+                    height: 100px;
+                }
+            }
+        }
+    }
+
+}
+
 @media(min-width: 360px) {
     #home {
 
@@ -193,6 +310,30 @@ nav {
 
             h2 {
                 font-size: 28px;
+            }
+        }
+    }
+
+    #aboutMe {
+
+        .aboutMe__section {
+
+            .aboutMe__technogolies {
+
+                .aboutMe__technogolieContainer {
+                    height: 80px;
+                }
+
+                .sass {
+                    top: 0;
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+
+                .react {
+                    top: 110px;
+                    height: 100px;
+                }
             }
         }
     }
@@ -219,7 +360,58 @@ nav {
             flex-direction: column;
             justify-content: center;
         }
+    }
 
+    #aboutMe {
+
+        .aboutMe__section {
+
+            .aboutMe__technogolies {
+
+                .aboutMe__technogolieContainer {
+                    height: 100px;
+
+                }
+
+                .html {
+                    left: 0;
+                }
+
+                .sass {
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+
+                .css {
+                    top: 0;
+                    right: 0;
+
+                }
+
+                .js {
+                    top: 120px;
+                    left: 0;
+                }
+
+                .react {
+                    height: 130px;
+                    top: 105px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+
+                .ts {
+                    top: 120px;
+                    right: 0;
+                }
+
+                .git {
+                    top: 240px;
+                    right: 0;
+                }
+
+            }
+        }
     }
 }
 
